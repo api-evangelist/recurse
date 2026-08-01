@@ -1,19 +1,48 @@
 aid: recurse
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/recurse.png
 name: Recurse
-description: Recurse is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Recurse ML is an AI-powered code review platform built for modern development
+  workflows that lean on AI coding assistants like Cursor, Claude Code, and GitHub
+  Copilot. It understands a whole codebase's context to catch subtle bugs, breaking
+  changes, library/API misuse, and SQL query issues that tests and static analyzers
+  miss, and returns actionable feedback with one-click fixes. Recurse ships as a
+  GitHub App that reviews pull requests, an rml CLI for local and CI/CD review, and
+  ReMCP, a Model Context Protocol server that turns Recurse into a self-healing
+  quality gate AI agents call to fix their own mistakes. It advertises a zero data
+  retention policy and is pursuing SOC 2 compliance.
 url: https://raw.githubusercontent.com/api-evangelist/recurse/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - seedcamp
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- AI Code Review
+- Code Review
+- Developer Tools
+- CLI
+- MCP
+- AI Agents
+- Static Analysis
+- Bug Detection
+- Code Quality
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +51,35 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://recurse.ml
+  url: https://www.recurse.ml/
+- type: DeveloperPortal
+  url: https://www.recurse.ml/docs
+- type: Documentation
+  url: https://www.recurse.ml/docs
+- type: GettingStarted
+  url: https://www.recurse.ml/docs/rml/getting-started/installing-on-macos
+- type: CLI
+  url: cli/recurse-cli.yml
+- type: MCPServer
+  url: mcp/recurse-mcp.yml
+- type: Packages
+  url: packages/recurse-packages.yml
+- type: LLMsTxt
+  url: llms/recurse-llms.txt
+- type: DomainSecurity
+  url: security/recurse-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/Recurse-ML
+- type: Blog
+  url: https://recurse-ml.notion.site
+- type: Support
+  url: https://discord.gg/qEjHQk64Z9
+- type: Pricing
+  url: https://www.recurse.ml/#pricing
+- type: SignUp
+  url: https://github.com/marketplace/recurse-ml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1

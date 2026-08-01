@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.recurse.ml/docs/rml/cli-reference
+name: rml
+summary: >-
+  RML is Recurse ML's command-line code reviewer. It compares two Git states and
+  reports bugs introduced by the changes, with optional markdown output for LLM /
+  CI use. A companion CLI, remcp, bootstraps the ReMCP MCP server (see mcp/).
+install:
+  - method: shell
+    command: curl -L install.recurse.ml | sh
+    platforms: [macos, linux, windows]
+    docs: https://www.recurse.ml/docs/rml/getting-started/installing-on-macos
+authentication:
+  style: github
+  notes: Uses GitHub authentication (shared with the GitHub App / ReMCP); no API keys.
+commands:
+  - name: rml
+    usage: rml [OPTIONS] [TARGET_FILENAMES]...
+    description: >-
+      Analyze file changes in a Git repository and report bugs introduced by those
+      changes. Defaults to comparing unstaged working-directory changes against HEAD.
+    examples:
+      - rml file.py
+      - rml file.py --from HEAD^
+      - rml file.py --from main --to feature
+flags:
+  - flag: --from GIT_REF
+    description: Git reference for the older state. Defaults to HEAD.
+  - flag: --to GIT_REF
+    description: Git reference for the newer state. Defaults to current working directory.
+  - flag: --version
+    description: Display the current version of RML and exit.
+  - flag: --help
+    description: Show the help message and exit.
+  - flag: -md, --markdown
+    description: Output results in markdown format. Ideal for LLM or programmatic use.
+configuration:
+  file: .recurseml.yaml
+  description: >-
+    Project-specific configuration; supports custom markdown-based rules that enforce
+    coding standards and project conventions.
+  docs: https://www.recurse.ml/docs/rml/configs
+repo: https://github.com/recurse-ml/rml

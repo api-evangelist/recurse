@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://www.recurse.ml/docs/remcp
+server:
+  name: remcp
+  transport: stdio
+  command: remcp serve
+  bootstrap: curl -L remcp.recurse.ml | bash
+  install:
+    - ide: claude-code
+      command: claude mcp add remcp --scope user -- remcp serve
+      docs: https://www.recurse.ml/docs/remcp/installation/install-claude-code
+    - ide: cursor
+      docs: https://www.recurse.ml/docs/remcp/installation/install-cursor
+authentication:
+  style: github
+  command: remcp auth
+  notes: Authenticate with GitHub after install; no API key.
+description: >-
+  ReMCP is Recurse ML's Model Context Protocol server. Installed as a local stdio
+  server (remcp serve), it lets AI coding assistants (Claude Code, Cursor) run
+  Recurse's AI code review on their own changes as a self-healing quality gate.
+prompts:
+  - name: review_code
+    invocation: "/remcp:review_code"
+    description: >-
+      Ask ReMCP to review the current code changes for bugs (e.g.
+      "/remcp:review_code Please implement access control on web api endpoints").
+tools:
+  - name: review_code
+    description: AI-powered review of code changes; reports bugs and suggests fixes.
+    status: published
+notes: >-
+  Distributed as a local MCP binary rather than a hosted remote endpoint; the
+  bootstrap host remcp.recurse.ml serves the install script.

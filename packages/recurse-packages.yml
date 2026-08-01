@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/recurse-ml
+note: >-
+  Recurse ML ships no REST-API client SDK. Its developer surface is CLI-first: the
+  rml reviewer and the remcp MCP bootstrap are distributed via a curl installer
+  (not a package registry). The one first-party registry package is noot, a Python
+  testing library. No `SDKs` pointer is emitted because there is no API client library.
+packages:
+  - language: python
+    registry: pypi
+    name: noot
+    url: https://pypi.org/project/noot/
+    install: pip install noot
+    license: Apache-2.0
+    official: true
+    description: Library for creating tests that are faithful to the user experience.
+    repo: https://github.com/recurse-ml/noot
+  - language: shell
+    registry: installer
+    name: rml
+    url: https://github.com/recurse-ml/rml
+    install: curl -L install.recurse.ml | sh
+    official: true
+    description: RML CLI code reviewer (see cli/recurse-cli.yml).
+  - language: shell
+    registry: installer
+    name: remcp
+    url: https://www.recurse.ml/docs/remcp
+    install: curl -L remcp.recurse.ml | bash
+    official: true
+    description: ReMCP MCP server bootstrap (see mcp/recurse-mcp.yml).
