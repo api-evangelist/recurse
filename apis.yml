@@ -42,7 +42,7 @@ x-tier: profiled
 x-tier-reason: enriched-from-public-surface
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 tags:
 - Company
 - AI Code Review
@@ -61,6 +61,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.recurse.ml/blog
+  type: Blog
 - type: Website
   url: https://www.recurse.ml/
 - type: DeveloperPortal
